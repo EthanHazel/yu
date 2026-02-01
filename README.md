@@ -9,5 +9,4 @@ a program that allows you to schedule YouTube videos for your Roku TV using a ho
 
 ## TODO
 
-- Docker image
 - Front end for toggling and editing alarms
