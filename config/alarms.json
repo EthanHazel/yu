@@ -1,0 +1,34 @@
+{
+  "sun": [],
+  "mon": [
+    {
+      "id": "GoodMythicalMorning",
+      "time": "08:00"
+    }
+  ],
+  "tue": [
+    {
+      "id": "GoodMythicalMorning",
+      "time": "08:00"
+    }
+  ],
+  "wed": [
+    {
+      "id": "GoodMythicalMorning",
+      "time": "08:00"
+    }
+  ],
+  "thu": [
+    {
+      "id": "GoodMythicalMorning",
+      "time": "08:00"
+    }
+  ],
+  "fri": [
+    {
+      "id": "GoodMythicalMorning",
+      "time": "08:00"
+    }
+  ],
+  "sat": []
+}
