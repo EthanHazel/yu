@@ -1,6 +1,6 @@
 # You up?
 
-a program that allows you to schedule YouTube videos for your Roku TV using a home server
+An alarm clock that doesn't piss you off. Schedule YouTube videos for your Roku TV in the morning to wake you up.
 
 ## Environment Variables
 

@@ -1,7 +1,7 @@
 {
-  "name": "untitled-tv-alarm",
+  "name": "you-up",
   "version": "1.0.0",
-  "description": "a program that will let you schedule a video/channel on a roku device based on a youtube video id",
+  "description": "An alarm clock that doesn't piss you off. Schedule YouTube videos for your Roku TV in the morning to wake you up.",
   "keywords": [
     "roku",
     "alarm",
