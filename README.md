@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)" />
   <img src="/.github/images/sep.png" />
   <img src="https://img.shields.io/github/languages/code-size/EthanHazel/yu" />
-  <img src="https://img.shields.io/github/stars/EthanHazel/yu" />
+  <img src="https://img.shields.io/github/stars/EthanHazel%2Fyu" />
 </p>
 
 ## How it works
