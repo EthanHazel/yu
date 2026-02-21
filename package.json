@@ -1,7 +1,8 @@
 {
-  "name": "you-up",
+  "name": "yu",
   "version": "1.0.0",
   "description": "An alarm clock that doesn't piss you off. Schedule YouTube videos for your Roku TV in the morning to wake you up.",
+  "homepage": "https://github.com/EthanHazel/yu",
   "keywords": [
     "roku",
     "alarm",
@@ -9,7 +10,8 @@
     "scheduler",
     "youtube",
     "tv",
-    "self-hosted"
+    "self-hosted",
+    "you-up"
   ],
   "license": "MIT",
   "author": {
