@@ -19,6 +19,9 @@ pids
 node_modules/
 jspm_packages/
 
+# Build directories
+dist/
+
 # Optional npm cache directory
 .npm
 

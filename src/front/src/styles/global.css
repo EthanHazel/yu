@@ -1,0 +1,75 @@
+:root {
+  font-family: sans-serif;
+
+  --background-color: #010101;
+  --text-color: #ffffff;
+  --accent-color: #ffffff80;
+  --error-color: #ff0000;
+
+  --corner-radius: 0.5rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+#layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  #layout {
+    flex-direction: column;
+  }
+}
+
+dialog {
+  border: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: var(--corner-radius);
+  padding: 2rem;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &::backdrop {
+    transition: background-color 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+
+  & input[value="Cancel"] {
+    order: 0;
+  }
+  & input[value="Save"] {
+    order: 1;
+  }
+}

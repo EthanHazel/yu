@@ -1,34 +1,30 @@
 {
-  "sun": [],
-  "mon": [
-    {
-      "id": "GoodMythicalMorning",
-      "time": "08:00"
+  "enabled": {
+    "1771115690": {
+      "name": "Good Mythical Morning",
+      "tvId": "0",
+      "contentId": "gmm",
+      "time": "08:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "repeat": true
+    },
+    "1771124796590": {
+      "name": "Girl With The Dogs",
+      "time": "09:00",
+      "repeat": true,
+      "tvId": "0",
+      "contentId": "gwd2",
+      "days": [
+        "sun",
+        "sat"
+      ]
     }
-  ],
-  "tue": [
-    {
-      "id": "GoodMythicalMorning",
-      "time": "08:00"
-    }
-  ],
-  "wed": [
-    {
-      "id": "GoodMythicalMorning",
-      "time": "08:00"
-    }
-  ],
-  "thu": [
-    {
-      "id": "GoodMythicalMorning",
-      "time": "08:00"
-    }
-  ],
-  "fri": [
-    {
-      "id": "GoodMythicalMorning",
-      "time": "08:00"
-    }
-  ],
-  "sat": []
+  },
+  "disabled": {}
 }

@@ -1,6 +1,20 @@
 {
-  "GoodMythicalMorning": {
+  "gmm": {
+    "name": "Good Mythical Morning",
     "type": "channel_latest",
     "id": "UC4PooiX37Pld1T8J5SYT-SQ"
+  },
+  "gwd2": {
+    "name": "Girl With The Dogs 2",
+    "type": "channel_random",
+    "id": "UC94iuT0ABFJYZD1L20wvY7w"
+  },
+  "1771106812069": {
+    "name": "Test",
+    "type": "random_pool",
+    "pool": [
+      "gmm",
+      "gwd2"
+    ]
   }
 }

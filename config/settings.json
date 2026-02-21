@@ -1,4 +1,19 @@
 {
-  "powerOnTimout": 3000,
-  "defaultMaxResults": 50
+  "defaultMaxResults": "50",
+  "defaultMinVideoLength": "180",
+  "weekStartDay": "sun",
+  "tvs": {
+    "0": {
+      "name": "Bedroom",
+      "icon": "bed",
+      "ip": "192.168.50.148",
+      "powerOnTimeout": "3000"
+    },
+    "1": {
+      "name": "Test",
+      "ip": "192.168.50.148",
+      "powerOnTimeout": "3000",
+      "icon": "unknown"
+    }
+  }
 }

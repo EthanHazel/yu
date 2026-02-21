@@ -1,0 +1,35 @@
+.field-input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.field-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 1rem;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.field-description {
+  font-size: 0.85rem;
+  width: 500px;
+  color: gray;
+}
+
+.field-factory-default {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.field-input input {
+  width: 100%;
+}

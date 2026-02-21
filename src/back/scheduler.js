@@ -1,4 +1,6 @@
-import Alarm from "../config/alarms.json" with { type: "json" };
+import fs from "fs";
+
+import configManager from "./config-manager.js";
 
 import launch from "./launch.js";
 
@@ -28,12 +30,39 @@ function _parseTimeToSeconds(time) {
 }
 
 function _updateAlarms() {
+  const Alarms = configManager.get("alarms");
+  const Settings = configManager.get("settings");
+
+  if (!Alarms || !Settings) {
+    console.warn("> Config not ready yet");
+    return;
+  }
+
   const now = new Date();
   today = DAYS[now.getDay()];
 
   console.log("Current day:", FORMAL_DAYS[today]);
 
-  const alarms = Alarm[today] ?? [];
+  const allAlarms = Alarms.enabled;
+
+  if (today === Settings.weekStartDay) {
+    // Move non repeating alarms to disabled
+    for (const alarmId in allAlarms) {
+      if (!allAlarms[alarmId].repeat) {
+        Alarms.disabled[alarmId] = allAlarms[alarmId];
+        delete Alarms.enabled[alarmId];
+        console.log(`> Moving alarm ${alarmId} to disabled`);
+        // Save to file
+        fs.writeFile("./config/alarms.json", JSON.stringify(Alarms)).then(
+          () => {
+            console.log("> Updated alarms.json");
+          },
+        );
+      }
+    }
+  }
+  const alarms = Object.values(allAlarms).filter((a) => a.days.includes(today));
+
   try {
     alarmList = alarms.map((a) => ({
       ...a,
@@ -46,12 +75,14 @@ function _updateAlarms() {
   }
 
   if (alarmList.length === 0) {
-    console.log("No alarm for today 💤");
+    console.log("No alarms for today 💤");
     return;
   }
 
   console.log("Alarms for today:", alarmList.length);
-  alarmList.forEach((a) => console.log(`> ID ${a.id} at ${a.time}`));
+  alarmList.forEach((a) =>
+    console.log(`> Content ID ${a.contentId} at ${a.time} for TV ${a.tvId}`),
+  );
 }
 
 function _runCheck() {
@@ -59,7 +90,9 @@ function _runCheck() {
 
   // Day rollover
   const currentDay = DAYS[now.getDay()];
-  if (currentDay !== today) _updateAlarms();
+  if (currentDay !== today) {
+    _updateAlarms();
+  }
 
   const nowSeconds =
     now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
@@ -67,8 +100,8 @@ function _runCheck() {
   for (const alarm of alarmList) {
     if (!alarm.triggered && alarm.seconds === nowSeconds) {
       alarm.triggered = true;
-      console.log(`> Launching alarm ${alarm.id}`);
-      launch(alarm.id);
+      console.log(`> Launching alarm ${alarm.contentId}`);
+      launch(alarm.contentId, alarm.tvId);
     }
   }
 }
@@ -76,7 +109,18 @@ function _runCheck() {
 export default function startScheduler() {
   _updateAlarms();
 
+  configManager.on("alarms:updated", () => {
+    console.log("> Scheduler reacting to alarms update");
+    _updateAlarms();
+  });
+
+  configManager.on("settings:updated", () => {
+    console.log("> Scheduler reacting to settings update");
+    _updateAlarms();
+  });
+
   const delay = 1000 - (Date.now() % 1000);
+
   setTimeout(() => {
     _runCheck();
     setInterval(_runCheck, 1000);
