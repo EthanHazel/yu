@@ -4,7 +4,7 @@
 
 <p align="center"><img src=".github/images/favicon.ico" style="width:128px;height:128px;"  /></p>
 <h1 align="center">Yu</h1>
-<h4 align="center">Stands for "You Up?"</h4>
+<blockquote align="center">Stands for "You Up?"</blockquote>
 <h3 align="center">An alarm clock that doesn't piss you off. Schedule YouTube videos for your Roku TV in the morning to wake you up.</h3>
 
 <p align="center">
